@@ -1,0 +1,19 @@
+*{
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    margin: 100px 100px;
+    height: 300px;
+    width: 400px;
+}
+
+
+input{
+    
+}
