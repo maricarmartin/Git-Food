@@ -1,32 +1,4 @@
-$(document).ready(function(){
-    // $("#submission").submit(function(event){
-    //     event.preventDefault();
-    //   alert("Submitted");
-    // });
-    // $("button").click(function(event){
-    //   $("#submission").submit();
-    // }); 
-    
-    $("#submission").on("submit",function(event){
-        event.preventDefault();
-        console.log("You submitted me!");
-    });
-  });
-
-
-fetch("https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=05548a0a117c9bb7c72bdc984e886936")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-  
-
-var requesturl = 'https://api.github.com/users/trinasnooks/repos'
-
-console.log(requesturl);
-
-
-var comment = document.getElementById("msg");
-var saveButton = document.getElementById("save");
-var savedName = document.getElementById("saved-name");
+/*
 saveButton.addEventListener("click", function(event) {
 event.preventDefault();
 var searchInput = {
@@ -42,13 +14,22 @@ function renderMessage() {
     document.querySelector(".message").textContent = finalSearch.comment
   }
 }
+*/
 
 
+var comment = document.getElementById("msg");
+var saveButton = document.getElementById("save");
+var savedName = document.getElementById("saved-name");
 var tableBody = document.getElementById('repo-table');
-var fetchButton = document.getElementById('fetch-button');
-function getApi() {
-  // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = 'https://api.github.com/orgs/nodejs/repos';
+// var fetchButton = document.getElementById('fetch-button');
+function getApi(event) {
+    event.preventDefault()
+    var searchInput = {
+        comment: comment.value.trim()
+    };
+    console.log(searchInput);
+  // fetch request gets a list of all the repos for the node.js organization//
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput.comment}&appid=6340cdd69e0374925a141cce8b65923d&weather.main`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -56,7 +37,7 @@ function getApi() {
     .then(function (data) {
       console.log(data)
       //Loop over the data to generate a table, each table row will have a link to the repo url
-      for (var i = 0; i < data.length; i++) {
+      /*for (var i = 0; i < data.length; i++) {
         // Creating elements, tablerow, tabledata, and anchor
         var createTableRow = document.createElement('tr');
         var tableData = document.createElement('td');
@@ -69,7 +50,9 @@ function getApi() {
         tableData.appendChild(link);
         createTableRow.appendChild(tableData);
         tableBody.appendChild(createTableRow);
-      }
+        
+      }*/
     });
 }
-fetchButton.addEventListener('click', getApi);
+
+saveButton.addEventListener('click', getApi);
