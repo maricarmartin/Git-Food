@@ -4,10 +4,14 @@
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    margin:100px;
 }
 
 .logo{
+    display: flex;
+    justify-content: left;
+
     margin: 100px 100px;
     height: 300px;
     width: 400px;
