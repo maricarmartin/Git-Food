@@ -47,3 +47,17 @@ function populateWeatherInfo(){
     const str = `${location},<br>${temp}&#0176C,<br>wind: ${wind}km/h<br>${timeString}`
     p.innerHTML = str
 }
+
+/*weather icon
+
+http://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+
+
+Icon= weather[0].icon
+iconEl.append(src = http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png)
+
+
+
+iconEl.append(src = http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png)
+src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+*/
