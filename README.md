@@ -1,2 +1,2 @@
 # Git-Food
-Git Food Project 1
+A user-friendly interface to find a restaurant with different cuisine within driving or walking distance. 
