@@ -13,8 +13,6 @@ GIT.Food.
 
 GIT.FOOD is user friendly and convenient website if you’re looking for a restaurant to enjoy dine in with a specific cuisine. You’ll see nearby places and you also check the local weather plus current time is displayed on the page.
 
-is a website where you can find a place to eat, search for different cuisine, look for
-
 ## Problem / Motivation
 
 As a group we choose an app concept that we all understood and have had experience using.
