@@ -2,293 +2,68 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Git. Food.</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="Assets/CSS/reset.css" />
-  <link rel="stylesheet" href="Assets/CSS/stylesheet.css" />
-</head>
-
-<header>
-  <p class="logo">
-    <image src="./Assets/Images/logo2.png" title="logo" class="logo"></image>
-  </p>
-  <!--<h1>OpenWeatherMap.org API</h1>-->
-</header>
-
-<body>
-
-  <section>
-    <div class="card">
-      <h2>Search for City</h2>
-      <form>
-        <ul>
-          <li>
-            <h3>
-              <label for="msg">Enter City</label>
-              <textarea id="msg" name="comments"></textarea>
-            </h3>
-          </li>
-        </ul>
-      </form>
-  </section>
-
-  <!--nav buttons-->
-  <section>
-    <!--<div class="row align-items-center py-2">
-      <div class="col-auto me-auto">-->
-        <div>
-        <button id="btnGet" type="button" class="btn btn-primary mb-3">
-          Get Weather
-        </button>
-      </div>
-    </div>
-    <!--<button id="btnCurrent" type="button" class="btn btn-primary mb-3">
-            Use Current Location
-          </button>
-        -->
-
-  </section>
-
-  <section>
-    <div id="weatherBug">
-      <h1>Today's Weather</h1>
-      <p>No Weather Data</p>
-    </div>
-    <div id="map">
-    </div>
-  </section>
-
-  <!--scripts-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-
-  <!--<script src="js/app.js" defer></script>-->
-
-  <script src="/assets/js/trina-weather-icon.js"></script>
-
-  <script src="Assets/JS/script.js"></script>
-
-  <script src="Assets/JS/OpenWeatherAPIScript.js"></script>
-  <script src="Assets/JS/GoogleMapsAPIScript.js"></script>
-
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfDzr3JThnFdcax7IT6HB9OA62a0ZeKaY&callback=initMap&v=weekly"
-    defer></script>
-
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfDzr3JThnFdcax7IT6HB9OA62a0ZeKaY&libraries=places&callback=initMap">
-    </script>
-
-
-</body>
-
-</html>
-
-
-
-<!--Test 1--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git. Food.</title>
-    <link rel="stylesheet" href="./Assets/CSS/stylesheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Assets/CSS/reset.css">
+  <link rel="stylesheet" href="./Assets/CSS/stylesheet.css">
 </head>
 
 <body>
-    
-    <header>
-        <image src="./Assets/Images/logo2.png" title="logo" class="logo"></image>
-    </header>
-
-   
-    <form id="submission" action="">
-        Location: <input type="text" name="Location" value=""><br>
-        Craving: <input type="text" name="Craving" value=""><br>
-        Distance: <input type="text" name="Distance" value=""><br>
-        <button>Trigger submit event</button>
-      </form> 
-      
-      
-<script src="./Assets/JS/script.js"></script>
-</body>
-</html>
--->
+<!--Header w/logo-->
+<div class="header-container">
+  <header>
+    <h1>
+    <img src="./Assets/Images/GIT FOOD 200.jpg" alt="Git Food Logo" class="Logo">
+    </h1>
+  </header>
+</div>
 
 
-
-<!--
-  change BOOTSTRAP
-  <body class="min-100-vh flex-column">
-    <section class="p-5 text-center text-white bg-primary">
-      <h1>Git.Food.</h1>
-    </section>
-
-      <main class="flex-row justify-center align-center col-auto p-4 bg-light">
-      <section class="card card-rounded col-7 bg-white">
-        
-       
-        <section class="card-header text-center">
-          <h2 class="text-white">
-            Search for City
-          </h2>
-        </section>
-    
-      <div class="text-center pt-4">
-          <button class="btn btn-danger" id="fetch-button">
-            Click Me
-          </button>
-        </div>
-
-        <table class="card-body table mx-auto my-4">
-          <th>
-            <p class="my-4">Results</p>
-          </th>
-          <tbody id="repo-table" class="mx-auto text-center"></tbody>
-        </table>
-      </section>
-    </main>
-
-<table class="table table-bordered">
-    <tbody id="data">
-    </tbody>
-</table>
-
-<section>
+<div class="wrap">
+  <!--OpenWeatherMap card + API-->
     <div class="card">
-        <h2>Search for City</h2>
-        <form>
-            <ul>
-                <li>
-                  <h3>
-                    <label for="msg">Enter City</label>
-                    <textarea id="msg" name="comments"></textarea>
-                  </h3>
-                </li>
-                <li>
-                  <h3>
-                    <label for="msg">Enter City</label>
-                    <textarea id="msg" name="comments"></textarea>
-                  </h3>
-                </li>
-                <li>
-                  <h3>
-                    <label for="msg">Enter City</label>
-                    <textarea id="msg" name="comments"></textarea>
-                  </h3>
-                </li>
-            </ul>
-            <button id="save">Search</button>
-        </form>
-        <h3 class="message"></h3>
-</section>
+      <div class="search">
+        <input type="text" class="search-bar" placeholder="Search">
+        <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
+            width="1.5em" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+            </path>
+          </svg></button>
+      </div>
+      <div class="weather loading">
+        <h2 class="city">Weather in Fredericton</h2>
+        <h1 class="temp">10°C</h1>
+        <div class="flex">
+          <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+          <div class="description">Cloudy</div>
+        </div>
+        <div class="humidity">Humidity: 60%</div>
+        <div class="wind">Wind speed: 6.2 km/h</div>
+      </div>
+    </div>
 
+  <!--G-Maps Interface-->
+  <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col">
+          <input class="form-control" id="search" type="text" placeholder="What food are you craving? Where?" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+</div>
 
-<script src="./assets/js/script-test.js"></script>
+      <script src="./Assets/JS/OpenWeatherAPIScript.js" defer></script>
+      <script src="./Assets/JS/googlePlaceSearch.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfDzr3JThnFdcax7IT6HB9OA62a0ZeKaY&callback=createMap&libraries=places" async defer></script>
 </body>
+
 </html>
--->
-
-<!--
-    <footer class="container">
-      <div class="row align-items-center">
-        <div class="col">
-          <img src="http://openweathermap.org/img/wn/10d.png" alt="demo icon" />
-          <span>10d.png</span>
-        </div>
-        <div class="col">
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="demo icon" />
-          <span>10d@2x.png</span>
-        </div>
-        <div class="col">
-          <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="demo icon" />
-          <span>10d@4x.png</span>
-        </div>
-      </div>
-    </footer>
-  -->
-
-<!--
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/css/reset.css" />
-  <link rel="stylesheet" href="./assets/css/stylesheet.css" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <title>Git.Food.</title>
-</head>
--->
-
-
-<!--display weather block-->
-<!--
-    <main class="container">
-      <h2>Weather</h2>
-      <!-- results for weather data 
-      <div class="weather row gx-2">
-        <div class="col">
-          <div class="card" style="width: 30vw">
-            <h5 class="card-title p-2">Date</h5>
-            <img src="http://openweathermap.org/img/wn/10d@4x.png" class="card-img-top" alt="Weather description" />
-            <div class="card-body">
-              <h3 class="card-title">Weather Label</h3>
-              <p class="card-text">High Temp Low Temp</p>
-              <p class="card-text">HighFeels like</p>
-              <p class="card-text">Pressure</p>
-              <p class="card-text">Humidty</p>
-              <p class="card-text">UV Index</p>
-              <p class="card-text">Precipitation</p>
-              <p class="card-text">Dew Point</p>
-              <p class="card-text">Wind speed and direction</p>
-              <p class="card-text">Sunrise</p>
-              <p class="card-text">Sunset</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
--->
-
-<!--lat and long input fields-->
-<!--
-  <div>
-  
-    <nav class="container">
-      <div class="row align-items-center py-2">
-        <div class="input-group col-sm">
-          <span class="input-group-text" id="basic-addon1">Lat</span>
-          <input type="text" class="form-control" inputmode="numeric" id="latitude" placeholder="latitude"
-            aria-label="latitude" aria-describedby="basic-addon1" value="42.98" />
-        </div>
-        
-        <div class="input-group col-sm">
-          <span class="input-group-text" id="basic-addon1">Lon</span>
-          <input type="text" class="form-control" inputmode="numeric" id="longitude" placeholder="longitude"
-            aria-label="longitude" aria-describedby="basic-addon1" value="-81.23" />
-        </div>
-      </div>
-
-      
-      <!--nav buttons
-      <div class="row align-items-center py-2">
-        <div class="col-auto me-auto">
-          <button id="btnGet" type="button" class="btn btn-primary mb-3">
-            Get Weather
-          </button>
-          <button id="btnCurrent" type="button" class="btn btn-primary mb-3">
-            Use Current Location
-          </button>
-        </div>
-      </div>
-    </nav>
-  -->

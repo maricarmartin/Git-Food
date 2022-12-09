@@ -1,63 +1,59 @@
-const p = document.querySelector('#weatherBug p')
+let weather = {
+    apiKey: "9b156649f18afabc3c1f9dab932de71c",
+    fetchWeather: function (city) {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&units=metric&appid=" +
+          this.apiKey
+      )
+        .then((response) => {
+          if (!response.ok) {
+            alert("No weather found.");
+            throw new Error("No weather found.");
+          }
+          return response.json();
+        })
+        .then((data) => this.displayWeather(data));
+    },
 
-let openWeatherData = {}
-let xhr = new XMLHttpRequest()
-xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=fredericton&appid=6340cdd69e0374925a141cce8b65923d&units=metric`)
-xhr.responseType = 'text'
+    //weather display data gather & functionality//
+    displayWeather: function (data) {
+      const { name } = data;
+      const { icon, description } = data.weather[0];
+      const { temp, humidity } = data.main;
+      const { speed } = data.wind;
 
-xhr.addEventListener('load', function(){
-    if (xhr.status === 200) {
-        p.textContent = "loading... "
-        openWeatherData = JSON.parse(xhr.responseText)
-        populateWeatherInfo()
-    } else {
-        p.textContent = "error: " + xhr.status
-    }
-}, false)
-
-xhr.send()
-
-function populateWeatherInfo(){
-
-    //location variable will have to equal something like userInput from a submission form for city//
-    const location = openWeatherData.name
-    const temp = Math.round(openWeatherData.main.temp)
-    const wind = Math.round(openWeatherData.wind.speed)
-    const time = new Date(openWeatherData.dt * 1000)
-    let hrs = time.getHours()
-    let mins = time.getMinutes()
-
-    //Setting up clock//
-    let timeString = ''
-    //For minutes to display in :xy format//
-    if (mins <10) {
-        mins = `0${mins}`
-    }
-    //To properly display AM/PM//
-    if (hrs === 12){
-        timeString = `12:${mins} PM`
-    } else if (hrs > 12) {
-        timeString =`${hrs - 12}:${mins} PM`
-    }else if (hrs === 0) {
-        timeString = `12:${mins} AM`
-    } else {
-        timeString = `${hrs}:${mins} AM`
-    }
-
-    const str = `${location},<br>${temp}&#0176C,<br>wind: ${wind}km/h<br>${timeString}`
-    p.innerHTML = str
-}
-
-/*weather icon
-
-http://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
-
-
-Icon= weather[0].icon
-iconEl.append(src = http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png)
-
-
-
-iconEl.append(src = http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png)
-src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
-*/
+      document.querySelector(".city").innerText = "Weather in " + name;
+      document.querySelector(".icon").src =
+        "https://openweathermap.org/img/wn/" + icon + ".png";
+      document.querySelector(".description").innerText = description;
+      document.querySelector(".temp").innerText = temp + "°C";
+      document.querySelector(".humidity").innerText =
+        "Humidity: " + humidity + "%";
+      document.querySelector(".wind").innerText =
+        "Wind speed: " + speed + " km/h";
+      document.querySelector(".weather").classList.remove("loading");
+      document.body.style.backgroundImage =
+        "url('https://source.unsplash.com/1600x900/?meal')";
+    },
+    search: function () {
+      this.fetchWeather(document.querySelector(".search-bar").value);
+    },
+  };
+  
+  //search bar icon click functionality//
+  document.querySelector(".search button").addEventListener("click", function () {
+    weather.search();
+  });
+  
+  //search bar enter button functionality//
+  document
+    .querySelector(".search-bar")
+    .addEventListener("keyup", function (event) {
+      if (event.key == "Enter") {
+        weather.search();
+      }
+    });
+  
+  weather.fetchWeather("Fredericton");
