@@ -109,6 +109,9 @@ Output:
 - Hours of operation
 - Add customer comments along with customer rating
 
+## Note
+*It's hard for commits to do justice to the work that we've done as a team. Often, our work involved us working with the pair-programming principle with all four of us working off of one shared screen. Each team member has contributed greatly to the project, and the project would not have succeeded without the input of any one of us.
+
 
 
 
