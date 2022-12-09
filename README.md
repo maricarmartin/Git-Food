@@ -1,5 +1,5 @@
 # Git-Food
-A user-friendly interface to find a restaurant with different cuisine within driving or walking distance. 
+A user-friendly interface to find restaurants of specified cuisines within driving or walking distance. 
 
 # Git-Food
 
@@ -11,24 +11,25 @@ GIT.Food.
 
 ## Description
 
-GIT.FOOD is user friendly and convenient website if you’re looking for a restaurant to enjoy dine in with a specific cuisine. You’ll see nearby places and you also check the local weather plus current time is displayed on the page.
+GIT.FOOD is user friendly and convenient website if you’re looking for a restaurant to enjoy dine in with a specific cuisine. You’ll see nearby places and can also check the local weather to determine if it's better to walk or drive.
 
 ## Problem / Motivation
 
 As a group we choose an app concept that we all understood and have had experience using.
 
-We decided to add our own creative twist to the standard restaurant search app by adding an updated weather icon feature. This is so that when a user is looking up nearby restaurants, they can also sea the current weather.
+We decided to add our own creative twist to the standard restaurant search app by adding an updated weather icon feature. This is so that when a user is looking up nearby restaurants, they can also see the current weather.
 
-For this reason it’s different than most food search apps but simultaneously offers the same basic functions you would expect from a food search app.This includes a map with marked nearby restaurants within a 5km radius, a list of those options with photo examples of the food the restaurant serves and a form to fill out preferences.
+For this reason it’s different than most food search apps but simultaneously offers the same basic functions you would expect from a food search app. This includes a map with marked nearby restaurants within a 5km radius, a list of those options with photo examples of the food the restaurant serves and a form to fill out preferences.
 
 ## How the project addresses the problem
 
-The website will allow users to enter their location or have it autodetect with geolocation and google places will return the restaurants near by
+The website will allow users to enter their location google places will return the restaurants nearby.
 
-## Possible API sources for data
+## API sources for data
 
-- openweathermap.org
-- google places
+- OpenWeatherMap API 3.0
+- Google Maps / Place Search
+- UnSplash API
 
 ## User Story
 
@@ -50,17 +51,9 @@ Want a user-friendly UI to make the finding a restaurant easy.
 Screenshots:
 
 
-    ![screenshot 1]((assets/images/logo.png)
-    ![screenshot 2]((assets/images/logo2.png)
-    ![screenshot 3]((assets/images/logo3.png)
-    ![screenshot 2]((assets/images/mockup1.png)
-    ![screenshot 3]((assets/images/mockup2.png)
-
----add to images folder---
+    ![screenshot 1]((assets/images/GIT FOOD 200.png)
+    ![screenshot 2]((assets/images/Git-Food-Screenshot.png)
     
-    ![screenshot 4]((assets/images/wireframe3.png)
-    ![screenshot 5]((assets/images/application1.png)
-    ![screenshot 6]((assets/images/application2.png)
 
 ## Credits
 Teammates
@@ -69,23 +62,31 @@ Teammates
 - Trina Snooks
 - Maricar Martin
 
-- Google Places documentation
-- Openweathermap.org documentation
+API Documentation
+- Google Maps / Place Search documentation
+- OpenWeatherMap.org documentation
+- UnSplash API documentation
 
+Websites/Forums
+- sitepoint.com
+- stackoverflow.com
+
+YouTube Channels
+- Traversy Media
+- Framework Television
+- Jonah Lawrence - Dev Pro Tips
+- Bryce St. Pierre
 
 ## Features
 User Input:
-- Your location 
-- Type of food / What are you Craving
-- Distance requested
-- Geolocation
+- Location search & cuisine search
+- Weather forecast location search
 
 Output:
-- List of restaurants
-- Resturant ratings 
-- Map 
-- Directions 
-- Weather conditions for the day in their location
+- List of restaurants (or other categories of place) according to search query
+- Resturant information
+- Map with markers of locations of specified category
+- Weather conditions for specified location at time of form submission
 
 ## Technology Used
 - HTML
@@ -93,17 +94,14 @@ Output:
 - Javascript
 - JQuery
 - Fetch
-- API
-- dayjs
-
+- API's
 
 ## Future Development
 
 User Input:
-- Type of food / What are you Craving
-- Distance requested by user
+- Distance specification user-input
 - Search by Postal code
-- Restaurant type (dine in/take out)  
+- More detailed restaurant cards (dine in/take out, open/close, etc.)  
 
 Output:
 - Restaurant list with pictures
